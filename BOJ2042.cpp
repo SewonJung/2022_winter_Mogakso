@@ -37,7 +37,7 @@ int main(){
   }
   
   for (ll i = 0; i < m+k; i++){
-    ll x, y, z
+    ll x, y, z;
     cin >> x >> y >> z;
     if (x == 1) update(y, z); 
     else cout << getval(1, 1, high, y, z) << "\n";
