@@ -28,8 +28,8 @@ https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem \
 |Maximum flow| = |Mimumum cut|임이 알려져 있다.\
 즉, G에서 maximum flow의 값을 찾는다면, minimum cut의 값도 알 수 있다.
 또한 이는 후술할, Ford - Fulkerson Algorithm을 validate한다.
-#
 
+#Ford - Fulkerson Algorithm
 그렇다면, 어떤 graph G에서 Maximum Flow를 어떻게 찾을 것인가?\
 이에 대하여 여러가지 풀이가 있지만 우선, Ford - Fulkerson Algorithm에 대하여 먼저 알아보자.\
 알고리즘의 동작 원리는 다음과 같다.\
