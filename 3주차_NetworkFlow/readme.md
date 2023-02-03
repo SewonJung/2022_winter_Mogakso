@@ -41,6 +41,6 @@ https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem \
 이는 reverse edge를 도입하여 해결할 수 있다. 실제로는 이동할 수 없는 방향이지만, 이 방향으로 flow를 추가한다는 것은, 원래의 flow를 감소시키는 것과 동일하기 때문이다.
 
 한편, Ford - Fulkerson Algorithm에서 dfs를 사용하게 되어 생기는 문제가 존재하는데,
-![image](https://user-images.githubusercontent.com/94056835/216622750-f8c1a625-57cd-48a1-a643-6b4afff9957a.png)
+![image](https://user-images.githubusercontent.com/94056835/216622750-f8c1a625-57cd-48a1-a643-6b4afff9957a.png) \
 위와 같은 그래프에서 dfs로 탐색을 하게 되면, 굉장히 비효율적인 탐색을 하게 된다.\
 이를 해결하기 위해 2번의 augmenting path를 찾는 과정을 bfs를 이용한 것이 Edmonds - Karp Algorithm이다.\
