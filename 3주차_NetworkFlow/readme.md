@@ -44,3 +44,7 @@ https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem \
 ![image](https://user-images.githubusercontent.com/94056835/216622750-f8c1a625-57cd-48a1-a643-6b4afff9957a.png) \
 위와 같은 그래프에서 dfs로 탐색을 하게 되면, 굉장히 비효율적인 탐색을 하게 된다.\
 이를 해결하기 위해 2번의 augmenting path를 찾는 과정을 bfs를 이용한 것이 Edmonds - Karp Algorithm이다.
+
+# Reference
+1. CLRS 4판 Chapter 24.
+2. 프로그래밍 대회에서 배우는 알고리즘 문제해결 전략 Chapter 32.
