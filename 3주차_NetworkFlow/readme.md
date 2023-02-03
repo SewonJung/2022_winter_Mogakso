@@ -33,5 +33,14 @@ https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem \
 그렇다면, 어떤 graph G에서 Maximum Flow를 어떻게 찾을 것인가?\
 이에 대하여 여러가지 풀이가 있지만 우선, Ford - Fulkerson Algorithm에 대하여 먼저 알아보자.\
 알고리즘의 동작 원리는 다음과 같다.\
-1. 모든 간선의 flow를 0으로 두고 시작한다.
-2. s -> t의 추가 유량을 보낼 수 있는 경로 augmenting path를 찾아 유량을 증가시키는 것을 반복한다.
+1. 모든 edge의 flow를 0으로 두고 시작한다.
+2. "dfs"를 이용해 s -> t의 추가 유량을 보낼 수 있는 경로 augmenting path를 찾아 flow을 증가시키는 것을 반복한다. 각 간선의 capacity에서 flow를 뺀 residual capacity를 이용하여, path를 찾고, 구한 path에서 가장 작은 residual capacity만큼 flow를 증가시킨다.
+3. augmenting path를 찾을 수 없다면 종료한다.\
+
+이렇게 구현하게 되면, path를 어떻게 선택하냐에 따라서 maximum flow가 아니지만, augmenting path가 존재하지 않는 경우가 존재한다.\
+이는 reverse edge를 도입하여 해결할 수 있다. 실제로는 이동할 수 없는 방향이지만, 이 방향으로 flow를 추가한다는 것은, 원래의 flow를 감소시키는 것과 동일하기 때문이다.
+
+한편, Ford - Fulkerson Algorithm에서 dfs를 사용하게 되어 생기는 문제가 존재하는데,
+![image](https://user-images.githubusercontent.com/94056835/216622750-f8c1a625-57cd-48a1-a643-6b4afff9957a.png)
+위와 같은 그래프에서 dfs로 탐색을 하게 되면, 굉장히 비효율적인 탐색을 하게 된다.\
+이를 해결하기 위해 2번의 augmenting path를 찾는 과정을 bfs를 이용한 것이 Edmonds - Karp Algorithm이다.\
