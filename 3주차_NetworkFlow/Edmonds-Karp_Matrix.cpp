@@ -30,7 +30,10 @@ int maximum_flow(int s, int t){
     
     int new_flow = INF; //initialize flow value of augmenting path
     
+    //backtrace augmenting path and get minimum residual capacity in the path
     for (int i = t; i != s; i = parent[i]) new_flow = min(cap[parent[i]][i] - flow[parent[i]][i], new_flow);
+    
+    //increase the flow of the edge in the path
     for (int i = t; i != s; i = parent[i]){
       flow[parent[i]][i] += new_flow;
       flow[i][parent[i]] -= new_flow;
