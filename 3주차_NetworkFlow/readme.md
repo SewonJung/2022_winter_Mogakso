@@ -43,7 +43,8 @@ https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem \
 한편, Ford - Fulkerson Algorithm에서 dfs를 사용하게 되어 생기는 문제가 존재하는데,\
 ![image](https://user-images.githubusercontent.com/94056835/216622750-f8c1a625-57cd-48a1-a643-6b4afff9957a.png) \
 위와 같은 그래프에서 dfs로 탐색을 하게 되면, 굉장히 비효율적인 탐색을 하게 된다.\
-이를 해결하기 위해 2번의 augmenting path를 찾는 과정을 bfs를 이용한 것이 Edmonds - Karp Algorithm이다.
+이를 해결하기 위해 2번의 augmenting path를 찾는 과정을 bfs를 이용한 것이 Edmonds - Karp Algorithm이다.\
+(단, Edge의 수가 많고 flow가 작다면, Ford - Fulkerson Algorithm(O(E|f|))이 더 효율적이다. 다만, 일반적으로 Edmonds - Karp Algorithm(O(VE^2))이 더 빠른 실행속도를 가진다.)
 
 # Reference
 1. CLRS 4판 Chapter 24.
