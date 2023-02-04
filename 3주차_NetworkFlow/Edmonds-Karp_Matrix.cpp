@@ -1,7 +1,6 @@
-const int MAX_V = 1000; //max of number of vertices
+const int MAX_V = 52; //max of number of vertices
 const int INF = 1<<30;
 
-int v; //number of vertices
 int cap[MAX_V][MAX_V], flow[MAX_V][MAX_V];
 
 int maximum_flow(int s, int t){
@@ -12,21 +11,22 @@ int maximum_flow(int s, int t){
     queue<int> q;
     parent[s] = s;
     q.push(s);
-    while(!q.empty() && ~parent[t]){
+    
+    while(!q.empty() && parent[t] == -1){
       int cur = q.front();
       q.pop();
-      for (int next = 0; next < v; next++){
-        if (cap[cur][next] > flow[cur][next] && ~parent[next]){
+      for (int next = 0; next < MAX_V; next++){
+        if (cap[cur][next] - flow[cur][next] > 0 && parent[next] == -1){
           q.push(next);
           parent[next] = cur;
         }
       }
-      if (~parent[s]) break;
+      if (parent[t] == -1) break; //s -> t의 경로가 없는 경우 break한다.
       int new_flow = INF;
       
-      for (int i = s; i != t; i = parent[i]) new_flow = min(cap[parent[i]][i] - flow[parent[i]][i], new_flow);
+      for (int i = t; i != s; i = parent[i]) new_flow = min(cap[parent[i]][i] - flow[parent[i]][i], new_flow);
 
-      for (int i = s; i != t; i = parent[i]){
+      for (int i = t; i != s; i = parent[i]){
         flow[parent[i]][i] += new_flow;
         flow[i][parent[i]] -= new_flow;
       }
