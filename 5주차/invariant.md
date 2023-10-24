@@ -7,9 +7,9 @@ https://www.youtube.com/watch?v=4wyhvjQQ1Rw
 
 이때, 모든 수를 같게 할 수 있는가를 묻는 문제이다.
 
-우선, 영상에서 나온 것 처럼 array의 size가 짝수라면 alternating sum이 invariant라는 점을 이용하여 alternating sum이 0이라면 같게 만들 수 있음을 알 수 있다.
+우선, 영상에서 나온 것 처럼 array의 size가 짝수라면 alternating sum이 invariant라는 점을 이용하여 alternating sum이 0이라면 같게 만들 수 있음을 알 수 있다.\
 그러나, array의 size가 홀수라면 원형을 이루고 있다는 특성 때문에 단순히 1회 alternating sum을 구하는 방식으로는 확정지을 수 없다. 예컨대, array의 size가 5일 때 1 0 1 0 0라는 array가 주어지게 되면,
-alternating sum은 2가 되나, 실제로는 연산을 거듭하다보면 모든 수를 2로 같게 만들 수 있다. 그렇다면 어떻게 이러한 문제를 처리할 수 있을까?
+alternating sum은 2가 되나, 실제로는 연산을 거듭하다보면 모든 수를 2로 같게 만들 수 있다. 그렇다면 어떻게 이러한 문제를 처리할 수 있을까?\
 
 슬라이딩 윈도우 기법을 사용하면 쉽게 해결할 수 있다.
 array가 원의 형태를 띄고 있다는 점을 이용하여 1 0 1 0 0 1 0 1 0 0 으로 늘어뜨릴 수 있다. 이후의 해결 방법은 기존 array의 size만큼씩 앞에서부터 alternating sum을 구해보면서 그 값이 0이 되는 순간이 있는지를 확인해보면 된다.
