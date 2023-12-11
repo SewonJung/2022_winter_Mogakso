@@ -9,10 +9,6 @@ flow in G f : V * V -> R에 대해 아래의 성질이 성립한다.
 2. ∀u∈V-{s,t} 에 대해, Σf(u,v) = Σf(v,u)이다.\
 즉, s와 t를 제외한 모든 vertex에 대해 vertex로 들어오는 flow의 양은 vertex에서 나가는 flow의 양과 같아야 한다.
 
-
-이제, 어떤 network의 flow의 크기를 |f|라고 하면, |f| = Σf(s,v) - Σf(v,s)이다.\
-즉, source로 들어오는 flow의 양과 나가는 flow의 양만을 보면 그 network의 flow의 크기를 알 수 있다.
-
 maximum flow problem이란, 어떤 graph G가 주어지면 G에서 |f|가 최대인 flow를 찾는 문제이다.
 
 한편, flow에서의 Cut(S, T)는 아래와 같이 정의한다.\
